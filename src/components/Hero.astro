@@ -1,0 +1,70 @@
+---
+const highlights = [
+	"Custom software for growing teams",
+	"Fast delivery with modern stacks",
+	"Long-term support and optimization",
+];
+---
+
+<section class="relative overflow-hidden pb-20 pt-16 reveal" data-animate>
+	<div class="pointer-events-none absolute inset-0">
+		<div class="absolute -left-24 top-0 h-72 w-72 rounded-full bg-cyan-500/10 blur-[120px]"></div>
+		<div class="absolute right-0 top-24 h-72 w-72 rounded-full bg-indigo-500/10 blur-[120px]"></div>
+	</div>
+	<div class="relative mx-auto flex w-full max-w-6xl flex-col gap-10 px-6 pt-10 md:flex-row md:items-center">
+		<div class="max-w-2xl space-y-6">
+			<p class="text-sm font-semibold uppercase tracking-[0.3em] text-cyan-300/80">
+				Modern IT Solutions
+			</p>
+			<h1 class="text-4xl font-semibold leading-tight text-white md:text-5xl">
+				We deliver thoughtful IT solutions that make your operations feel effortless.
+			</h1>
+			<p class="text-base text-slate-300 md:text-lg">
+				We partner with ambitious teams to design, build, and scale digital products. From custom
+				applications to reliable cloud setups, we deliver outcomes that feel polished and perform
+				flawlessly.
+			</p>
+			<div class="flex flex-wrap gap-4">
+				<a
+					class="btn-primary"
+					href="#contact"
+				>
+					Start a project
+				</a>
+				<a
+					class="btn-secondary"
+					href="#services"
+				>
+					Explore services
+				</a>
+			</div>
+			<div class="flex flex-wrap gap-4 text-xs text-slate-400">
+				{highlights.map((item) => (
+					<span class="rounded-full border border-white/10 bg-white/5 px-3 py-1">{item}</span>
+				))}
+			</div>
+		</div>
+		<div class="w-full max-w-md rounded-3xl border border-white/10 bg-white/5 p-6 shadow-2xl">
+			<p class="text-xs uppercase tracking-[0.2em] text-slate-400">Trusted Approach</p>
+			<h2 class="mt-4 text-2xl font-semibold text-white">Strategy + execution in one team.</h2>
+			<p class="mt-3 text-sm text-slate-300">
+				We blend product strategy, UX, and engineering to ship end-to-end solutions that are secure,
+				scalable, and ready for growth.
+			</p>
+			<div class="mt-6 space-y-3 text-sm text-slate-300">
+				<div class="flex items-center gap-3">
+					<span class="h-2 w-2 rounded-full bg-cyan-400"></span>
+					Discovery workshops and technical planning
+				</div>
+				<div class="flex items-center gap-3">
+					<span class="h-2 w-2 rounded-full bg-cyan-400"></span>
+					Design systems and implementation
+				</div>
+				<div class="flex items-center gap-3">
+					<span class="h-2 w-2 rounded-full bg-cyan-400"></span>
+					Ongoing optimization and support
+				</div>
+			</div>
+		</div>
+	</div>
+</section>

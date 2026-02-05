@@ -1,0 +1,23 @@
+---
+const navItems = [
+	{ label: "Services", href: "#services" },
+	{ label: "Process", href: "#process" },
+	{ label: "About", href: "#about" },
+	{ label: "Contact", href: "#contact" },
+];
+---
+
+<header class="relative z-50 bg-transparent">
+	<div class="mx-auto flex w-full items-center justify-between px-10 py-5">
+		<a href="/" class="flex items-center gap-3 text-lg font-semibold">
+			<span class="wordmark text-2xl font-semibold text-white md:text-3xl">KORS</span>
+		</a>
+		<nav class="hidden items-center gap-6 text-base text-slate-300 md:flex">
+			{navItems.map((item) => (
+				<a class="transition hover:text-white" href={item.href}>
+					{item.label}
+				</a>
+			))}
+		</nav>
+	</div>
+</header>

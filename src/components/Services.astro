@@ -1,0 +1,45 @@
+---
+const services = [
+	{
+		title: "IT Solutions",
+		description:
+			"Thoughtful audits, infrastructure upgrades, and security support that keep your business steady.",
+	},
+	{
+		title: "Application Development",
+		description:
+			"Custom web and mobile apps built with reliable architecture and user-first design.",
+	},
+	{
+		title: "Website Development",
+		description:
+			"Modern websites that load fast, feel welcoming, and turn visitors into customers.",
+	},
+	{
+		title: "Cloud & Automation",
+		description:
+			"Cloud migrations, automation, and monitoring that help your team ship with confidence.",
+	},
+];
+---
+
+<section id="services" class="mx-auto w-full max-w-6xl px-6 py-20 reveal" data-animate>
+	<div class="flex flex-col gap-4">
+		<p class="text-sm font-semibold uppercase tracking-[0.3em] text-cyan-300/80">Services</p>
+		<h2 class="text-3xl font-semibold text-white md:text-4xl">
+			Practical, people-first solutions for modern teams.
+		</h2>
+		<p class="max-w-2xl text-base text-slate-300">
+			Kors Digital works alongside your team with clarity, empathy, and a focus on outcomes. We
+			listen first, then build a roadmap that respects your pace and priorities.
+		</p>
+	</div>
+	<div class="mt-10 grid gap-6 md:grid-cols-2">
+		{services.map((service) => (
+			<div class="rounded-3xl border border-white/10 bg-white/5 p-6">
+				<h3 class="text-xl font-semibold text-white">{service.title}</h3>
+				<p class="mt-3 text-sm text-slate-300">{service.description}</p>
+			</div>
+		))}
+	</div>
+</section>
