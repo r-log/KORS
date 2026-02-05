@@ -8,16 +8,53 @@ const navItems = [
 ---
 
 <header class="relative z-50 bg-transparent">
-	<div class="mx-auto flex w-full items-center justify-between px-10 py-5">
-		<a href="/" class="flex items-center gap-3 text-lg font-semibold">
-			<span class="wordmark text-2xl font-semibold text-white md:text-3xl">KORS</span>
-		</a>
-		<nav class="hidden items-center gap-6 text-base text-slate-300 md:flex">
+	<div class="mx-auto w-full px-6 py-4 sm:px-10 sm:py-5">
+		<div class="flex items-center justify-between">
+			<a href="/" class="flex items-center gap-3 text-lg font-semibold">
+				<span class="wordmark text-2xl font-semibold text-white md:text-3xl">KORS</span>
+			</a>
+			<nav class="hidden items-center gap-6 text-base text-slate-300 md:flex">
+				{navItems.map((item) => (
+					<a class="transition hover:text-white" href={item.href}>
+						{item.label}
+					</a>
+				))}
+			</nav>
+			<button
+				class="inline-flex items-center justify-center rounded-full border border-white/15 bg-white/5 px-4 py-2 text-sm font-semibold text-white transition hover:border-white/30 hover:bg-white/10 md:hidden"
+				type="button"
+				aria-expanded="false"
+				aria-controls="mobile-nav"
+				data-mobile-toggle
+			>
+				Menu
+			</button>
+		</div>
+		<nav
+			id="mobile-nav"
+			class="mt-4 hidden flex-col gap-3 rounded-2xl border border-white/10 bg-white/5 p-4 text-base text-slate-200 md:hidden"
+		>
 			{navItems.map((item) => (
-				<a class="transition hover:text-white" href={item.href}>
+				<a class="rounded-lg px-2 py-2 transition hover:bg-white/10" href={item.href}>
 					{item.label}
 				</a>
 			))}
 		</nav>
 	</div>
+	<script is:inline>
+		const toggle = document.querySelector("[data-mobile-toggle]");
+		const menu = document.getElementById("mobile-nav");
+		if (toggle && menu) {
+			toggle.addEventListener("click", () => {
+				const isOpen = menu.classList.toggle("hidden") === false;
+				toggle.setAttribute("aria-expanded", String(isOpen));
+			});
+			menu.querySelectorAll("a").forEach((link) => {
+				link.addEventListener("click", () => {
+					menu.classList.add("hidden");
+					toggle.setAttribute("aria-expanded", "false");
+				});
+			});
+		}
+	</script>
 </header>

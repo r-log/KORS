@@ -2,8 +2,8 @@
 const turnstileSiteKey = import.meta.env.PUBLIC_TURNSTILE_SITE_KEY ?? "your-site-key";
 ---
 
-<section id="contact" class="border-t border-white/5 bg-white/2 px-6 py-20 reveal" data-animate>
-	<div class="mx-auto grid w-full max-w-6xl gap-10 md:grid-cols-[1fr_1.1fr] md:items-start">
+<section id="contact" class="border-t border-white/5 bg-white/2 px-6 py-16 sm:py-20 reveal" data-animate>
+	<div class="mx-auto grid w-full max-w-6xl gap-8 sm:gap-10 md:grid-cols-[1fr_1.1fr] md:items-start">
 		<div class="space-y-5">
 			<p class="text-sm font-semibold uppercase tracking-[0.3em] text-cyan-300/80">Contact</p>
 			<h2 class="text-3xl font-semibold text-white md:text-4xl">Let's build something together.</h2>
@@ -20,10 +20,10 @@ const turnstileSiteKey = import.meta.env.PUBLIC_TURNSTILE_SITE_KEY ?? "your-site
 				</ul>
 			</div>
 		</div>
-		<div class="rounded-3xl border border-white/10 bg-white/5 p-8">
+		<div class="rounded-3xl border border-white/10 bg-white/5 p-6 sm:p-8">
 			<form id="contact-form" class="space-y-4" action="/contact" method="POST">
-				<div class="grid gap-4 md:grid-cols-2">
-					<label class="text-xs uppercase tracking-[0.2em] text-slate-400">
+				<div class="grid gap-4 sm:grid-cols-2">
+					<label class="text-sm uppercase tracking-[0.16em] text-slate-400">
 						Name
 						<input
 							class="mt-2 w-full rounded-2xl border border-white/10 bg-white/5 px-4 py-3 text-sm text-white focus:border-cyan-400 focus:outline-none"
@@ -33,7 +33,7 @@ const turnstileSiteKey = import.meta.env.PUBLIC_TURNSTILE_SITE_KEY ?? "your-site
 							type="text"
 						/>
 					</label>
-					<label class="text-xs uppercase tracking-[0.2em] text-slate-400">
+					<label class="text-sm uppercase tracking-[0.16em] text-slate-400">
 						Email
 						<input
 							class="mt-2 w-full rounded-2xl border border-white/10 bg-white/5 px-4 py-3 text-sm text-white focus:border-cyan-400 focus:outline-none"
@@ -44,7 +44,7 @@ const turnstileSiteKey = import.meta.env.PUBLIC_TURNSTILE_SITE_KEY ?? "your-site
 						/>
 					</label>
 				</div>
-				<label class="text-xs uppercase tracking-[0.2em] text-slate-400">
+				<label class="text-sm uppercase tracking-[0.16em] text-slate-400">
 					Company
 					<input
 						class="mt-2 w-full rounded-2xl border border-white/10 bg-white/5 px-4 py-3 text-sm text-white focus:border-cyan-400 focus:outline-none"
@@ -53,7 +53,7 @@ const turnstileSiteKey = import.meta.env.PUBLIC_TURNSTILE_SITE_KEY ?? "your-site
 						type="text"
 					/>
 				</label>
-				<label class="text-xs uppercase tracking-[0.2em] text-slate-400">
+				<label class="text-sm uppercase tracking-[0.16em] text-slate-400">
 					Project details
 					<textarea
 						class="mt-2 min-h-[140px] w-full rounded-2xl border border-white/10 bg-white/5 px-4 py-3 text-sm text-white focus:border-cyan-400 focus:outline-none"

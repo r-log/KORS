@@ -6,39 +6,39 @@ const highlights = [
 ];
 ---
 
-<section class="relative overflow-hidden pb-20 pt-16 reveal" data-animate>
+<section class="relative overflow-hidden pb-16 pt-12 sm:pb-20 sm:pt-16 reveal" data-animate>
 	<div class="pointer-events-none absolute inset-0">
 		<div class="absolute -left-24 top-0 h-72 w-72 rounded-full bg-cyan-500/10 blur-[120px]"></div>
 		<div class="absolute right-0 top-24 h-72 w-72 rounded-full bg-indigo-500/10 blur-[120px]"></div>
 	</div>
-	<div class="relative mx-auto flex w-full max-w-6xl flex-col gap-10 px-6 pt-10 md:flex-row md:items-center">
-		<div class="max-w-2xl space-y-6">
+	<div class="relative mx-auto flex w-full max-w-6xl flex-col gap-10 px-6 pt-6 sm:pt-10 md:flex-row md:items-center">
+		<div class="max-w-2xl space-y-5 sm:space-y-6">
 			<p class="text-sm font-semibold uppercase tracking-[0.3em] text-cyan-300/80">
 				Modern IT Solutions
 			</p>
-			<h1 class="text-4xl font-semibold leading-tight text-white md:text-5xl">
+			<h1 class="text-3xl font-semibold leading-tight text-white sm:text-4xl md:text-5xl">
 				We deliver thoughtful IT solutions that make your operations feel effortless.
 			</h1>
-			<p class="text-base text-slate-300 md:text-lg">
+			<p class="text-base text-slate-300 sm:text-lg">
 				We partner with ambitious teams to design, build, and scale digital products. From custom
 				applications to reliable cloud setups, we deliver outcomes that feel polished and perform
 				flawlessly.
 			</p>
-			<div class="flex flex-wrap gap-4">
+			<div class="flex flex-col gap-3 sm:flex-row sm:items-center sm:gap-4">
 				<a
-					class="btn-primary"
+					class="btn-primary w-full sm:w-auto"
 					href="#contact"
 				>
 					Start a project
 				</a>
 				<a
-					class="btn-secondary"
+					class="btn-secondary w-full sm:w-auto"
 					href="#services"
 				>
 					Explore services
 				</a>
 			</div>
-			<div class="flex flex-wrap gap-4 text-xs text-slate-400">
+			<div class="flex flex-wrap gap-2 text-[11px] text-slate-400 sm:gap-3 sm:text-xs">
 				{highlights.map((item) => (
 					<span class="rounded-full border border-white/10 bg-white/5 px-3 py-1">{item}</span>
 				))}
