@@ -21,11 +21,17 @@ const navItems = [
 				))}
 			</nav>
 			<div class="flex items-center gap-3">
-				<button class="theme-toggle hidden md:inline-flex" type="button" aria-label="Toggle theme">
-					<span class="theme-toggle__track">
+				<button
+					class="theme-toggle inline-flex"
+					type="button"
+					aria-label="Toggle theme"
+					data-theme-toggle
+				>
+					<span class="theme-toggle__track" aria-hidden="true">
+						<span class="theme-toggle__icon theme-toggle__icon--sun">☀</span>
+						<span class="theme-toggle__icon theme-toggle__icon--moon">☾</span>
 						<span class="theme-toggle__thumb"></span>
 					</span>
-					<span class="theme-toggle__icon" aria-hidden="true">◐</span>
 				</button>
 				<button
 					class="inline-flex items-center justify-center rounded-full border border-white/15 bg-white/5 px-4 py-2 text-sm font-semibold text-white transition hover:border-white/30 hover:bg-white/10 md:hidden"
@@ -51,6 +57,12 @@ const navItems = [
 	</div>
 	<script is:inline>
 		const toggle = document.querySelector("[data-mobile-toggle]");
+		const themeToggle = document.querySelector("[data-theme-toggle]");
+		if (themeToggle) {
+			themeToggle.addEventListener("click", () => {
+				themeToggle.classList.toggle("is-active");
+			});
+		}
 		const menu = document.getElementById("mobile-nav");
 		if (toggle && menu) {
 			toggle.addEventListener("click", () => {

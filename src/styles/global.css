@@ -116,11 +116,10 @@
 
     .theme-toggle {
         align-items: center;
-        gap: 0.5rem;
         border-radius: 9999px;
         border: 1px solid rgba(255, 255, 255, 0.15);
         background: rgba(255, 255, 255, 0.06);
-        padding: 0.35rem 0.6rem;
+        padding: 0.35rem 0.45rem;
         color: #e2e8f0;
         transition: border 200ms ease, background 200ms ease, transform 200ms ease;
     }
@@ -134,48 +133,41 @@
     .theme-toggle__track {
         position: relative;
         display: inline-flex;
-        width: 2.1rem;
-        height: 1.1rem;
+        align-items: center;
+        justify-content: space-between;
+        gap: 0.25rem;
+        width: 2.6rem;
+        height: 1.3rem;
+        padding: 0 0.35rem;
         border-radius: 9999px;
-        background: linear-gradient(120deg, rgba(59, 130, 246, 0.6), rgba(16, 185, 129, 0.4));
+        background: rgba(15, 23, 42, 0.6);
         overflow: hidden;
     }
 
     .theme-toggle__thumb {
         position: absolute;
         top: 50%;
-        left: 0.25rem;
-        width: 0.75rem;
-        height: 0.75rem;
+        left: 0.2rem;
+        width: 0.95rem;
+        height: 0.95rem;
         border-radius: 9999px;
         background: #f8fafc;
         transform: translateY(-50%);
-        animation: theme-toggle-glide 2.8s ease-in-out infinite;
+        transition: left 240ms ease;
     }
 
     .theme-toggle__icon {
-        font-size: 0.9rem;
+        font-size: 0.65rem;
+        color: #cbd5f5;
         opacity: 0.85;
-        animation: theme-toggle-pulse 2.4s ease-in-out infinite;
+        z-index: 1;
     }
 
-    @keyframes theme-toggle-glide {
-        0%,
-        100% {
-            left: 0.25rem;
-        }
-        50% {
-            left: 1.1rem;
-        }
+    .theme-toggle.is-active .theme-toggle__thumb {
+        left: 1.4rem;
     }
 
-    @keyframes theme-toggle-pulse {
-        0%,
-        100% {
-            opacity: 0.7;
-        }
-        50% {
-            opacity: 1;
-        }
+    .theme-toggle.is-active .theme-toggle__track {
+        background: rgba(59, 130, 246, 0.35);
     }
 }
