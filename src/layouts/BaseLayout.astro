@@ -15,7 +15,7 @@ import "../styles/global.css";
 		<link rel="icon" href="/favicon.ico" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<meta name="description" content={description} />
-		<meta name="theme-color" content="#070b14" />
+		<meta name="theme-color" content="#070b14" id="theme-color" />
 		<meta property="og:title" content={title} />
 		<meta property="og:description" content={description} />
 		<meta property="og:type" content="website" />
@@ -26,13 +26,23 @@ import "../styles/global.css";
 			href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&family=Source+Sans+3:wght@400;600;700&family=Special+Gothic+Condensed+One&display=swap"
 			rel="stylesheet"
 		/>
+		<script is:inline>
+			const storedTheme = localStorage.getItem("theme");
+			const initialTheme = storedTheme === "light" ? "light" : "dark";
+			document.documentElement.setAttribute("data-theme", initialTheme);
+			document.documentElement.style.colorScheme = initialTheme;
+			const themeMeta = document.querySelector("meta[name='theme-color']");
+			if (themeMeta) {
+				themeMeta.setAttribute("content", initialTheme === "light" ? "#f8fafc" : "#070b14");
+			}
+		</script>
 	</head>
-	<body class="min-h-screen bg-[#070b14] text-slate-100 antialiased">
+	<body class="min-h-screen antialiased bg-base text-body">
 		<div class="site-shell relative min-h-screen overflow-x-hidden">
 			<div class="pointer-events-none absolute inset-0 overflow-hidden" aria-hidden="true">
-				<div class="absolute left-[-20%] top-[-10%] h-[480px] w-[480px] rounded-full bg-cyan-500/10 blur-[140px]"></div>
-				<div class="absolute right-[-10%] top-[10%] h-[520px] w-[520px] rounded-full bg-indigo-500/10 blur-[160px]"></div>
-				<div class="absolute bottom-[-20%] left-[20%] h-[520px] w-[520px] rounded-full bg-blue-500/10 blur-[160px]"></div>
+				<div class="theme-glow absolute left-[-20%] top-[-10%] h-[480px] w-[480px] rounded-full bg-cyan-500/10 blur-[140px]"></div>
+				<div class="theme-glow absolute right-[-10%] top-[10%] h-[520px] w-[520px] rounded-full bg-indigo-500/10 blur-[160px]"></div>
+				<div class="theme-glow absolute bottom-[-20%] left-[20%] h-[520px] w-[520px] rounded-full bg-blue-500/10 blur-[160px]"></div>
 			</div>
 			<div class="relative z-10">
 				<slot />

@@ -19,21 +19,21 @@ const steps = [
 ];
 ---
 
-<section id="process" class="border-y border-white/5 bg-white/2 px-6 py-16 sm:py-20 reveal" data-animate>
+<section id="process" class="border-y border-subtle bg-section px-6 py-16 sm:py-20 reveal" data-animate>
 	<div class="mx-auto w-full max-w-6xl">
 		<div class="flex flex-col gap-4">
-			<p class="text-sm font-semibold uppercase tracking-[0.3em] text-cyan-300/80">Process</p>
-			<h2 class="text-3xl font-semibold text-white md:text-4xl">A calm, collaborative delivery.</h2>
-			<p class="max-w-2xl text-base text-slate-300">
+			<p class="text-sm font-semibold uppercase tracking-[0.3em] text-accent">Process</p>
+			<h2 class="text-3xl font-semibold text-primary md:text-4xl">A calm, collaborative delivery.</h2>
+			<p class="max-w-2xl text-base text-muted">
 				We keep projects moving with clear milestones, steady communication, and a team that feels
 				like a true partner.
 			</p>
 		</div>
 		<div class="mt-8 grid gap-4 sm:mt-10 sm:gap-6 md:grid-cols-2">
 			{steps.map((step) => (
-				<div class="rounded-3xl border border-white/10 bg-white/5 p-5 sm:p-6">
-					<h3 class="text-xl font-semibold text-white">{step.title}</h3>
-					<p class="mt-3 text-sm text-slate-300">{step.description}</p>
+				<div class="rounded-3xl border border-subtle bg-surface p-5 sm:p-6">
+					<h3 class="text-xl font-semibold text-primary">{step.title}</h3>
+					<p class="mt-3 text-sm text-muted">{step.description}</p>
 				</div>
 			))}
 		</div>

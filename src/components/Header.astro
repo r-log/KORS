@@ -11,11 +11,11 @@ const navItems = [
 	<div class="mx-auto w-full px-6 py-4 sm:px-10 sm:py-5">
 		<div class="relative flex items-center justify-between">
 			<a href="/" class="relative z-10 flex items-center gap-3 text-lg font-semibold">
-				<span class="wordmark text-2xl font-semibold text-white md:text-3xl">KORS</span>
+				<span class="wordmark text-2xl font-semibold text-primary md:text-3xl">KORS</span>
 			</a>
-			<nav class="hidden items-center gap-6 text-base text-slate-300 md:flex md:absolute md:left-1/2 md:-translate-x-1/2">
+			<nav class="hidden items-center gap-6 text-base text-muted md:flex md:absolute md:left-1/2 md:-translate-x-1/2">
 				{navItems.map((item) => (
-					<a class="transition hover:text-white" href={item.href}>
+					<a class="transition hover:text-primary" href={item.href}>
 						{item.label}
 					</a>
 				))}
@@ -34,7 +34,7 @@ const navItems = [
 					</span>
 				</button>
 				<button
-					class="inline-flex items-center justify-center rounded-full border border-white/15 bg-white/5 px-4 py-2 text-sm font-semibold text-white transition hover:border-white/30 hover:bg-white/10 md:hidden"
+					class="inline-flex items-center justify-center rounded-full border border-subtle bg-surface px-4 py-2 text-sm font-semibold text-primary transition hover:bg-surface-strong md:hidden"
 					type="button"
 					aria-expanded="false"
 					aria-controls="mobile-nav"
@@ -46,10 +46,10 @@ const navItems = [
 		</div>
 		<nav
 			id="mobile-nav"
-			class="mt-4 hidden flex-col gap-3 rounded-2xl border border-white/10 bg-white/5 p-4 text-base text-slate-200 md:hidden"
+			class="mt-4 hidden flex-col gap-3 rounded-2xl border border-subtle bg-surface p-4 text-base text-body md:hidden"
 		>
 			{navItems.map((item) => (
-				<a class="rounded-lg px-2 py-2 transition hover:bg-white/10" href={item.href}>
+				<a class="rounded-lg px-2 py-2 transition hover:bg-surface-strong" href={item.href}>
 					{item.label}
 				</a>
 			))}
@@ -59,8 +59,25 @@ const navItems = [
 		const toggle = document.querySelector("[data-mobile-toggle]");
 		const themeToggle = document.querySelector("[data-theme-toggle]");
 		if (themeToggle) {
+			const root = document.documentElement;
+			const updateToggleState = () => {
+				const active = root.getAttribute("data-theme") === "light";
+				themeToggle.classList.toggle("is-active", active);
+			};
+			const setTheme = (theme) => {
+				root.setAttribute("data-theme", theme);
+				root.style.colorScheme = theme;
+				localStorage.setItem("theme", theme);
+				const themeMeta = document.querySelector("meta[name='theme-color']");
+				if (themeMeta) {
+					themeMeta.setAttribute("content", theme === "light" ? "#f8fafc" : "#070b14");
+				}
+				updateToggleState();
+			};
+			updateToggleState();
 			themeToggle.addEventListener("click", () => {
-				themeToggle.classList.toggle("is-active");
+				const current = root.getAttribute("data-theme") || "dark";
+				setTheme(current === "light" ? "dark" : "light");
 			});
 		}
 		const menu = document.getElementById("mobile-nav");
