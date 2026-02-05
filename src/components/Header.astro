@@ -20,15 +20,23 @@ const navItems = [
 					</a>
 				))}
 			</nav>
-			<button
-				class="inline-flex items-center justify-center rounded-full border border-white/15 bg-white/5 px-4 py-2 text-sm font-semibold text-white transition hover:border-white/30 hover:bg-white/10 md:hidden"
-				type="button"
-				aria-expanded="false"
-				aria-controls="mobile-nav"
-				data-mobile-toggle
-			>
-				Menu
-			</button>
+			<div class="flex items-center gap-3">
+				<button class="theme-toggle hidden md:inline-flex" type="button" aria-label="Toggle theme">
+					<span class="theme-toggle__track">
+						<span class="theme-toggle__thumb"></span>
+					</span>
+					<span class="theme-toggle__icon" aria-hidden="true">◐</span>
+				</button>
+				<button
+					class="inline-flex items-center justify-center rounded-full border border-white/15 bg-white/5 px-4 py-2 text-sm font-semibold text-white transition hover:border-white/30 hover:bg-white/10 md:hidden"
+					type="button"
+					aria-expanded="false"
+					aria-controls="mobile-nav"
+					data-mobile-toggle
+				>
+					Menu
+				</button>
+			</div>
 		</div>
 		<nav
 			id="mobile-nav"
