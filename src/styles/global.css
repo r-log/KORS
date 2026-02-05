@@ -1,117 +1,116 @@
 @import "tailwindcss";
 
 @layer base {
-	:root {
-		color-scheme: dark;
-	}
+    :root {
+        color-scheme: dark;
+    }
 
-	html {
-		scroll-behavior: smooth;
-	}
+    html {
+        scroll-behavior: smooth;
+    }
 
-	body {
-		font-family: "Manrope", system-ui, -apple-system, sans-serif;
-		background: #070b14;
-		color: #e2e8f0;
-	}
+    body {
+        font-family: "Manrope", system-ui, -apple-system, sans-serif;
+        background: #070b14;
+        color: #e2e8f0;
+    }
 
-	h1,
-	h2,
-	h3,
-	h4 {
-		font-family: "Space Grotesk", system-ui, -apple-system, sans-serif;
-	}
+    h1,
+    h2,
+    h3,
+    h4 {
+        font-family: "Space Grotesk", system-ui, -apple-system, sans-serif;
+    }
 
-	.wordmark {
-		font-family: "Space Grotesk", system-ui, -apple-system, sans-serif;
-		letter-spacing: 0.18em;
-	}
+    .wordmark {
+        font-family: "Space Grotesk", system-ui, -apple-system, sans-serif;
+        letter-spacing: 0.18em;
+    }
 
-	.site-shell::after {
-		content: "";
-		position: fixed;
-		inset: 0;
-		background-image: radial-gradient(
-				circle at 1px 1px,
-				rgba(255, 255, 255, 0.08) 1px,
-				transparent 0
-			),
-			radial-gradient(circle at 1px 1px, rgba(255, 255, 255, 0.04) 1px, transparent 0);
-		background-size: 26px 26px, 60px 60px;
-		opacity: 0.08;
-		pointer-events: none;
-		z-index: 0;
-	}
+    .site-shell::after {
+        content: "";
+        position: fixed;
+        inset: 0;
+        background-image: radial-gradient(circle at 1px 1px,
+                rgba(255, 255, 255, 0.08) 1px,
+                transparent 0),
+            radial-gradient(circle at 1px 1px, rgba(255, 255, 255, 0.04) 1px, transparent 0);
+        background-size: 26px 26px, 60px 60px;
+        opacity: 0.08;
+        pointer-events: none;
+        z-index: 0;
+    }
 
-	@media (max-width: 640px) {
-		.wordmark {
-			letter-spacing: 0.12em;
-		}
-	}
+    @media (max-width: 640px) {
+        .wordmark {
+            letter-spacing: 0.12em;
+        }
+    }
 }
 
 @layer components {
-	.reveal {
-		opacity: 0;
-		transform: translateY(24px);
-		transition: opacity 600ms ease, transform 600ms ease;
-	}
+    .reveal {
+        opacity: 0;
+        transform: translateY(24px);
+        transition: opacity 600ms ease, transform 600ms ease;
+    }
 
-	.reveal.is-visible {
-		opacity: 1;
-		transform: translateY(0);
-	}
+    .reveal.is-visible {
+        opacity: 1;
+        transform: translateY(0);
+    }
 
-	@media (prefers-reduced-motion: reduce) {
-		.reveal {
-			opacity: 1;
-			transform: none;
-			transition: none;
-		}
-	}
+    @media (prefers-reduced-motion: reduce) {
+        .reveal {
+            opacity: 1;
+            transform: none;
+            transition: none;
+        }
+    }
 
-	.btn-primary {
-		display: inline-flex;
-		align-items: center;
-		justify-content: center;
-		border-radius: 9999px;
-		background: linear-gradient(135deg, #34d399, #22d3ee);
-		color: #020617;
-		font-size: 0.875rem;
-		font-weight: 600;
-		padding: 0.75rem 1.5rem;
-		transition: transform 200ms ease, box-shadow 200ms ease;
-		box-shadow: 0 12px 30px rgba(34, 211, 238, 0.15);
-	}
+    .btn-primary {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 9999px;
+        background: linear-gradient(135deg, #34d399, #22d3ee);
+        color: #020617;
+        font-size: 0.875rem;
+        font-weight: 600;
+        padding: 0.75rem 1.5rem;
+        transition: transform 200ms ease, box-shadow 200ms ease;
+        box-shadow: 0 12px 30px rgba(34, 211, 238, 0.15);
+    }
 
-	.btn-primary:hover {
-		transform: translateY(-1px);
-		box-shadow: 0 16px 40px rgba(34, 211, 238, 0.25);
-	}
+    .btn-primary:hover {
+        transform: translateY(-1px);
+        box-shadow: 0 16px 40px rgba(34, 211, 238, 0.25);
+    }
 
-	.btn-secondary {
-		display: inline-flex;
-		align-items: center;
-		justify-content: center;
-		border-radius: 9999px;
-		border: 1px solid rgba(255, 255, 255, 0.15);
-		color: #e2e8f0;
-		font-size: 0.875rem;
-		font-weight: 600;
-		padding: 0.75rem 1.5rem;
-		transition: border 200ms ease, background 200ms ease;
-	}
+    .btn-secondary {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 9999px;
+        border: 1px solid rgba(255, 255, 255, 0.15);
+        color: #e2e8f0;
+        font-size: 0.875rem;
+        font-weight: 600;
+        padding: 0.75rem 1.5rem;
+        transition: border 200ms ease, background 200ms ease;
+    }
 
-	.btn-secondary:hover {
-		border-color: rgba(255, 255, 255, 0.35);
-		background: rgba(255, 255, 255, 0.06);
-	}
+    .btn-secondary:hover {
+        border-color: rgba(255, 255, 255, 0.35);
+        background: rgba(255, 255, 255, 0.06);
+    }
 
-	@media (max-width: 640px) {
-		.btn-primary,
-		.btn-secondary {
-			font-size: 0.85rem;
-			padding: 0.7rem 1.25rem;
-		}
-	}
+    @media (max-width: 640px) {
+
+        .btn-primary,
+        .btn-secondary {
+            font-size: 0.85rem;
+            padding: 0.7rem 1.25rem;
+        }
+    }
 }
