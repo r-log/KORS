@@ -9,11 +9,11 @@ const navItems = [
 
 <header class="relative z-50 bg-transparent">
 	<div class="mx-auto w-full px-6 py-4 sm:px-10 sm:py-5">
-		<div class="flex items-center justify-between">
-			<a href="/" class="flex items-center gap-3 text-lg font-semibold">
+		<div class="relative flex items-center justify-between">
+			<a href="/" class="relative z-10 flex items-center gap-3 text-lg font-semibold">
 				<span class="wordmark text-2xl font-semibold text-white md:text-3xl">KORS</span>
 			</a>
-			<nav class="hidden items-center gap-6 text-base text-slate-300 md:flex">
+			<nav class="hidden items-center gap-6 text-base text-slate-300 md:flex md:absolute md:left-1/2 md:-translate-x-1/2">
 				{navItems.map((item) => (
 					<a class="transition hover:text-white" href={item.href}>
 						{item.label}
