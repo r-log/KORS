@@ -104,10 +104,12 @@
     }
 
     @keyframes background-breathe {
+
         0%,
         100% {
             filter: saturate(1) brightness(1);
         }
+
         50% {
             filter: saturate(1.2) brightness(1.06);
         }
@@ -122,6 +124,25 @@
     @media (max-width: 640px) {
         .wordmark {
             letter-spacing: 0.12em;
+        }
+    }
+}
+
+@layer utilities {
+    .turnstile-wrap {
+        max-width: 100%;
+        overflow: hidden;
+        display: flex;
+        justify-content: center;
+    }
+
+    .turnstile-wrap .cf-turnstile {
+        transform-origin: center top;
+    }
+
+    @media (max-width: 420px) {
+        .turnstile-wrap .cf-turnstile {
+            transform: scale(0.9);
         }
     }
 }
@@ -195,6 +216,7 @@
         border-color: var(--accent-strong);
         outline: none;
     }
+
     .reveal {
         opacity: 0;
         transform: translateY(24px);
