@@ -104,10 +104,12 @@
     }
 
     @keyframes background-breathe {
+
         0%,
         100% {
             filter: saturate(1) brightness(1);
         }
+
         50% {
             filter: saturate(1.2) brightness(1.06);
         }
@@ -195,6 +197,7 @@
         border-color: var(--accent-strong);
         outline: none;
     }
+
     .reveal {
         opacity: 0;
         transform: translateY(24px);
