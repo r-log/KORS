@@ -13,9 +13,9 @@ const navItems = [
 			<a href="/" class="relative z-10 flex items-center gap-3 text-lg font-semibold">
 				<span class="wordmark text-2xl font-semibold text-primary md:text-3xl">KORS</span>
 			</a>
-			<nav class="hidden items-center gap-6 text-base text-muted md:flex md:absolute md:left-1/2 md:-translate-x-1/2">
+			<nav class="hidden items-center gap-6 text-base text-muted uppercase md:flex md:absolute md:left-1/2 md:-translate-x-1/2">
 				{navItems.map((item) => (
-					<a class="transition hover:text-primary" href={item.href}>
+					<a class="nav-link-glow transition hover:text-primary" href={item.href}>
 						{item.label}
 					</a>
 				))}
@@ -46,10 +46,10 @@ const navItems = [
 		</div>
 		<nav
 			id="mobile-nav"
-			class="mt-4 hidden flex-col gap-3 rounded-2xl border border-subtle bg-surface p-4 text-base text-body md:hidden"
+			class="mt-4 hidden flex-col gap-3 rounded-2xl border border-subtle bg-surface p-4 text-base text-body uppercase md:hidden"
 		>
 			{navItems.map((item) => (
-				<a class="rounded-lg px-2 py-2 transition hover:bg-surface-strong" href={item.href}>
+				<a class="nav-link-glow rounded-lg px-2 py-2 transition hover:bg-surface-strong" href={item.href}>
 					{item.label}
 				</a>
 			))}
