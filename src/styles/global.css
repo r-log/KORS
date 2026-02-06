@@ -91,6 +91,7 @@
             radial-gradient(circle at 30% 20%, rgba(59, 130, 246, 0.12), transparent 50%),
             radial-gradient(circle at bottom right, rgba(14, 116, 144, 0.16), transparent 55%);
         opacity: 0.85;
+        animation: background-breathe 12s ease-in-out infinite;
     }
 
     html[data-theme="light"] .theme-gradient {
@@ -99,6 +100,23 @@
             radial-gradient(circle at 35% 20%, rgba(2, 132, 199, 0.18), transparent 50%),
             radial-gradient(circle at bottom right, rgba(67, 56, 202, 0.16), transparent 55%);
         opacity: 0.75;
+        animation: background-breathe 14s ease-in-out infinite;
+    }
+
+    @keyframes background-breathe {
+        0%,
+        100% {
+            filter: saturate(1) brightness(1);
+        }
+        50% {
+            filter: saturate(1.2) brightness(1.06);
+        }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+        .theme-gradient {
+            animation: none;
+        }
     }
 
     @media (max-width: 640px) {
@@ -123,6 +141,21 @@
 
     .bg-surface-strong {
         background: var(--surface-strong);
+    }
+
+    .section-container {
+        width: 100%;
+        max-width: 78rem;
+        margin: 0 auto;
+        padding-left: 1.5rem;
+        padding-right: 1.5rem;
+    }
+
+    @media (min-width: 640px) {
+        .section-container {
+            padding-left: 2.5rem;
+            padding-right: 2.5rem;
+        }
     }
 
     .border-subtle {

@@ -1,0 +1,49 @@
+---
+const roles = [
+	{
+		title: "Full-Stack Developer",
+		description: "Build and ship web applications end-to-end with modern stacks.",
+	},
+	{
+		title: "Android App Developer",
+		description: "Design and deliver high-quality Android apps from UI to release.",
+	},
+];
+---
+
+<section id="hiring" class="border-y border-subtle bg-section py-16 sm:py-20 reveal" data-animate>
+	<div class="section-container">
+		<div class="flex flex-col gap-4">
+			<p class="text-sm font-semibold uppercase tracking-[0.3em] text-accent">Hiring</p>
+			<h2 class="text-3xl font-semibold text-primary md:text-4xl">
+				We are hiring, join our digital team!
+			</h2>
+			<p class="max-w-2xl text-base text-muted">
+				Join Kors Digital and help deliver IT solutions and applications directly to customers.
+			</p>
+		</div>
+		<div class="mt-8 space-y-4 sm:mt-10">
+			{roles.map((role) => (
+				<div class="flex gap-4">
+					<span class="mt-2 h-2 w-2 shrink-0 rounded-full bg-[var(--accent-strong)]"></span>
+					<div>
+						<div class="flex flex-wrap items-center gap-2">
+							<h3 class="text-lg font-semibold text-primary">{role.title}</h3>
+							<span class="rounded-full bg-emerald-500/15 px-2 py-0.5 text-xs font-semibold uppercase tracking-[0.2em] text-emerald-500">
+								Open
+							</span>
+						</div>
+						<p class="mt-2 text-sm text-muted">{role.description}</p>
+					</div>
+				</div>
+			))}
+		</div>
+		<div class="mt-8 max-w-2xl text-sm text-muted">
+			Apply at{" "}
+			<a class="text-primary underline underline-offset-4" href="mailto:info@kors.digital">
+				info@kors.digital
+			</a>{" "}
+			with your CV. GitHub projects are appreciated.
+		</div>
+	</div>
+</section>

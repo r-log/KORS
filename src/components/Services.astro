@@ -23,26 +23,28 @@ const services = [
 ];
 ---
 
-<section id="services" class="mx-auto w-full max-w-6xl px-6 py-16 sm:py-20 reveal" data-animate>
-	<div class="flex flex-col gap-4">
-		<p class="text-sm font-semibold uppercase tracking-[0.3em] text-accent">Services</p>
-		<h2 class="text-3xl font-semibold text-primary md:text-4xl">
-			Practical, people-first solutions for modern teams.
-		</h2>
-		<p class="max-w-2xl text-base text-muted">
-			Kors Digital delivers complete IT solutions directly to your business. We own the roadmap,
-			build in-house, and provide what you need to launch with confidence.
-		</p>
-	</div>
-	<div class="mt-8 space-y-4 sm:mt-10">
-		{services.map((service) => (
-			<div class="flex gap-4">
-				<span class="mt-2 h-2 w-2 shrink-0 rounded-full bg-[var(--accent-strong)]"></span>
-				<div>
-					<h3 class="text-lg font-semibold text-primary">{service.title}</h3>
-					<p class="mt-2 text-sm text-muted">{service.description}</p>
+<section id="services" class="py-16 sm:py-20 reveal" data-animate>
+	<div class="section-container">
+		<div class="flex flex-col gap-4">
+			<p class="text-sm font-semibold uppercase tracking-[0.3em] text-accent">Services</p>
+			<h2 class="text-3xl font-semibold text-primary md:text-4xl">
+				Practical, people-first solutions for modern teams.
+			</h2>
+			<p class="max-w-2xl text-base text-muted">
+				Kors Digital delivers complete IT solutions directly to your business. We own the roadmap,
+				build in-house, and provide what you need to launch with confidence.
+			</p>
+		</div>
+		<div class="mt-8 space-y-4 sm:mt-10">
+			{services.map((service) => (
+				<div class="flex gap-4">
+					<span class="mt-2 h-2 w-2 shrink-0 rounded-full bg-[var(--accent-strong)]"></span>
+					<div>
+						<h3 class="text-lg font-semibold text-primary">{service.title}</h3>
+						<p class="mt-2 text-sm text-muted">{service.description}</p>
+					</div>
 				</div>
-			</div>
-		))}
+			))}
+		</div>
 	</div>
 </section>
